@@ -2,6 +2,23 @@ import styled from "styled-components";
 import { Theme } from "../../style/Them";
 
 export const NavbarStyle = styled.div`
-  /* color: ${Theme.color.white};
-  background-color: ${Theme.color.black}; */
+  Header {
+    color: ${Theme.color.black};
+    background-color: ${Theme.color.white};
+
+    .ant-menu {
+      &.ant-menu-dark {
+        background-color: ${Theme.color.white};
+
+        .ant-menu-item {
+          color: ${Theme.color.black};
+          background-color: ${Theme.color.white};
+
+          &:hover {
+            color: #dadada;
+          }
+        }
+      }
+    }
+  }
 `;

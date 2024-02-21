@@ -1,6 +1,7 @@
 import React from "react";
 import { Layout, theme } from "antd";
 import { Navbar } from "../navbar/Navbar";
+import { MainSec } from "./MainSec";
 const { Content, Footer } = Layout;
 
 export const Home = () => {
@@ -10,25 +11,21 @@ export const Home = () => {
   return (
     <Layout>
       <Navbar />
-      <Content
-        style={{
-          padding: "48px",
-        }}
-      >
+      <Content>
         <Layout
           style={{
-            padding: "24px 0",
+            // padding: " 0",
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
           }}
         >
           <Content
             style={{
-              padding: "0 24px",
-              minHeight: 280,
+              padding: "0 8%",
+              minHeight: 380,
             }}
           >
-            Content
+            <MainSec />
           </Content>
         </Layout>
       </Content>

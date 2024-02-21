@@ -14,33 +14,27 @@ const menuItems = [
   { key: "5", label: "Parent" },
 ];
 
-const provinces = ["Zhejiang", "Jiangsu"];
-const citiesData = {
-  Zhejiang: ["Hangzhou", "Ningbo", "Wenzhou"],
-  Jiangsu: ["Nanjing", "Suzhou", "Zhenjiang"],
-};
+const provinces = ["ENGLISH", "GUJARATI"];
 
 export const Navbar = () => {
-  const [cities, setCities] = useState(citiesData[provinces[0]]);
-  const [selectedCity, setSelectedCity] = useState(citiesData[provinces[0]][0]);
+  const [selectedProvince, setSelectedProvince] = useState(provinces[0]);
 
   const handleProvinceChange = (value) => {
-    setCities(citiesData[value]);
-    setSelectedCity(citiesData[value][0]);
+    setSelectedProvince(value);
   };
 
   return (
     <NavbarStyle>
       <Header>
         <Flex justify="space-between">
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
+          <Menu theme="dark" mode="horizontal">
             {menuItems.map((item) => (
               <Menu.Item key={item.key}>{item.label}</Menu.Item>
             ))}
           </Menu>
           <Space wrap>
             <Select
-              defaultValue={provinces[0]}
+              value={selectedProvince}
               style={{ width: 120 }}
               onChange={handleProvinceChange}
             >
